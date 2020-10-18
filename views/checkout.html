@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-4">
+    <div class="col-xs-12 col-md-5">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">
@@ -20,27 +20,31 @@
                 CARD NUMBER</label>
               <div class="input-group">
                 <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number" required
-                  autofocus ng-model="checkoutInfo.cardNumber" ng-pattern="/^\d{1,16}$/"/>
+                  autofocus ng-model="checkoutInfo.cardNumber" maxlength="16" ng-pattern="/^\d{1,16}$/" />
                 <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
               </div>
             </div>
             <div class="row">
               <div class="col-xs-7 col-md-7">
                 <div class="form-group">
-                  <label for="expityMonth">
-                    EXPIRY DATE</label>
+
                   <div class="col-xs-6 col-lg-6 pl-ziro">
-                    <input type="text"  class="form-control" id="expityMonth" placeholder="MM" required ng-model="checkoutInfo.expiryMonth" ng-pattern="/[1-9]|1[012]/"/>
+                    <label for="expityMonth">EXP MONTH</label>
+                    <input type="text" maxlength="2" class="form-control" id="expityMonth" placeholder="MM" required
+                      ng-model="checkoutInfo.expiryMonth" ng-pattern="/[1-9]|1[012]/" />
                   </div>
                   <div class="col-xs-6 col-lg-6 pl-ziro">
-                    <input type="text" class="form-control" id="expityYear" placeholder="YY" required ng-model="checkoutInfo.expiryYear"/></div>
+                    <label for="expityMonth">EXP YEAR</label>
+                    <input type="text" maxlength="4" class="form-control" id="expityYear" placeholder="YYYY" required
+                      ng-model="checkoutInfo.expiryYear" /></div>
                 </div>
               </div>
               <div class="col-xs-5 col-md-5 pull-right">
                 <div class="form-group">
                   <label for="cvCode">
                     CV CODE</label>
-                  <input type="password" min=3 max=4 class="form-control" id="cvCode" placeholder="CV" required ng-model="checkoutInfo.cvCode" />
+                  <input type="password" maxlength="4" class="form-control" id="cvCode" placeholder="CV" required
+                    ng-model="checkoutInfo.cvCode" />
                 </div>
               </div>
             </div>
@@ -51,7 +55,8 @@
           </li>
         </ul>
         <br />
-        <a href="#!/confirmation" class="btn btn-success btn-lg btn-block" role="submit" ng-disabled="validateCheckout()">Pay</a>
+        <a href="#!/confirmation" class="btn btn-success btn-lg btn-block" role="submit"
+          ng-disabled="validateCheckout()">Pay</a>
       </div>
       </form>
     </div>
