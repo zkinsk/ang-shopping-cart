@@ -68,7 +68,7 @@ app.controller('CartController', [
 
     $scope.validateCheckout = function () {
       const { cardNumber, expiryMonth, expiryYear, cvCode } = $scope.checkoutInfo;
-      console.log('Scope: ', $scope.checkoutInfo);
+      // console.log('Scope: ', $scope.checkoutInfo);
       if (
         checkLength(cardNumber, 12, 19) &&
         checkLength(expiryMonth, 2, 2) &&
