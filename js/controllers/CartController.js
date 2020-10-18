@@ -86,6 +86,11 @@ app.controller('CartController', [
       expiryYear: '',
       cvCode: '',
     };
+
+    $scope.generateConfirmationNumber = function(){
+      const characters = generateCharacterRange(lowerCaseRange) + generateCharacterRange(numberRange)
+      return generateKey(characters)
+    }
   },
 ]);
 
@@ -100,3 +105,28 @@ function checkLength(item = '', min, max) {
   console.log('Checking');
   return item.length >= min && item.length <= max;
 }
+
+function generateCharacterRange(rangeArray) {
+    let string = '';
+    for (let i = rangeArray[0]; i <= rangeArray[1]; i++) {
+        string += String.fromCharCode(i);
+    }
+    return string;
+}
+
+const lowerCaseRange = [97, 122];
+const numberRange = [48, 57];
+
+function randomNum(upperRange) {
+    return Math.floor(Math.random() * upperRange);
+}
+
+function generateKey(chars){
+  let key = ""
+  for (let i = 0; i < 12; i++){
+    const index = randomNum(chars.length);
+    key += chars[index]
+  }
+  return key
+}
+
