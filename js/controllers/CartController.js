@@ -47,8 +47,15 @@ app.controller('CartController', [
     $scope.totalPrice = function (items) {
       const total = calcTotal(items);
       $scope.salesTax = total * $scope.salesTaxRate;
-      return (total + $scope.salesTax).toFixed(2).toString();
+      return (total + $scope.salesTax).toFixed(2);
     };
+
+    $scope.getSalesTax = function(){
+      return {
+        amount: $scope.salesTax.toFixed(2),
+        rate: $scope.salesTaxRate*100
+      }
+    }
 
     $scope.removeItem = function (id) {
       $scope.cartItems = $scope.cartItems.filter((item) => item._id !== id);

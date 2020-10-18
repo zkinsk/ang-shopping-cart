@@ -13,3 +13,12 @@
   background-color: rgba(199, 199, 199, 0.5);
   transform: scaleX(.8)
 }
+
+.card_row:last-child::after{
+  content: none;
+}
+
+.sales_tax{
+  display: inline-block;
+  font-size: 80%
+}

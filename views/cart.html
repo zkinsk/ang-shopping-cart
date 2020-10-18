@@ -25,7 +25,7 @@
         <div class="panel-footer">
           <div class="row text-center">
             <div class="col-xs-9">
-              <h4 class="text-right">Total (inc. tax) <strong>${{ totalPrice(cartItems) }}</strong></h4>
+              <h4 class="text-right">Total <strong>${{ totalPrice(cartItems) }}</strong><br><span class="sales_tax">(inc. tax: ${{ getSalesTax().amount }} @ {{getSalesTax().rate}}%)</span></h4>
             </div>
             <div class="col-xs-3">
               <a type="button" class="btn btn-success btn-block" href="#!checkout" {{ checkDisabled() }}>
