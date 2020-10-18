@@ -2,7 +2,9 @@ app.directive('cartCard', function () {
   return {
     restrict: 'E',
     scope: {
-      propList: '=',
+      proplist: '=',
+      click: '=',
+      imagePrefix: '='
     },
     templateUrl: 'js/directives/cartCard/cartCard.html',
   };
