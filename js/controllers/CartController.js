@@ -60,7 +60,9 @@ app.controller('CartController', [
     $scope.removeItem = function (id) {
       $scope.cartItems = $scope.cartItems.filter((item) => item._id !== id);
     };
-    $scope.disabled = 'disabled';
+    $scope.itemsInCart = function(){
+      return $scope.cartItems.length > 0 ? false: true;
+    }
   },
 ]);
 

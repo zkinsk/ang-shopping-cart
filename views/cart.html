@@ -28,7 +28,7 @@
               <h4 class="text-right">Total <strong>${{ totalPrice(cartItems) }}</strong><br><span class="sales_tax">(inc. tax: ${{ getSalesTax().amount }} @ {{getSalesTax().rate}}%)</span></h4>
             </div>
             <div class="col-xs-3">
-              <a type="button" class="btn btn-success btn-block" href="#!checkout" {{ checkDisabled() }}>
+              <a type="button" class="btn btn-success btn-block" href="#!checkout"  ng-disabled="itemsInCart()">
                 Checkout
               </a>
             </div>
