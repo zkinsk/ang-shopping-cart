@@ -20,7 +20,7 @@
                 CARD NUMBER</label>
               <div class="input-group">
                 <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number" required
-                  autofocus ng-model="checkoutInfo.cardNumber"/>
+                  autofocus ng-model="checkoutInfo.cardNumber" ng-pattern="/^\d{1,16}$/"/>
                 <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
               </div>
             </div>
@@ -30,7 +30,7 @@
                   <label for="expityMonth">
                     EXPIRY DATE</label>
                   <div class="col-xs-6 col-lg-6 pl-ziro">
-                    <input type="text"  class="form-control" id="expityMonth" placeholder="MM" required ng-model="checkoutInfo.expiryMonth" />
+                    <input type="text"  class="form-control" id="expityMonth" placeholder="MM" required ng-model="checkoutInfo.expiryMonth" ng-pattern="/[1-9]|1[012]/"/>
                   </div>
                   <div class="col-xs-6 col-lg-6 pl-ziro">
                     <input type="text" class="form-control" id="expityYear" placeholder="YY" required ng-model="checkoutInfo.expiryYear"/></div>

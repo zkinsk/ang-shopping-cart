@@ -68,6 +68,7 @@ app.controller('CartController', [
 
     $scope.validateCheckout = function () {
       const { cardNumber, expiryMonth, expiryYear, cvCode } = $scope.checkoutInfo;
+      console.log('Scope: ', $scope.checkoutInfo);
       if (
         checkLength(cardNumber, 12, 19) &&
         checkLength(expiryMonth, 2, 2) &&
@@ -95,7 +96,7 @@ function calcTotal(itemsArr) {
   }, 0);
 }
 
-function checkLength(item = "", min, max) {
+function checkLength(item = '', min, max) {
   console.log('Checking');
   return item.length >= min && item.length <= max;
 }
