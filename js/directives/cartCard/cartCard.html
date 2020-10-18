@@ -12,7 +12,7 @@
         <h6><strong>{{ item.currency }}{{ item.price }} <span class="text-muted">x</span></strong></h6>
       </div>
       <div class="col-xs-4">
-        <input type="text" class="form-control input-sm" value="{{ item.qty }}">
+        <input type="number" min=0 max=100 class="form-control input-sm" value="{{ item.qty }}" ng-model="item.qty">
       </div>
       <div class="col-xs-2">
         <button type="button" class="btn btn-link btn-xs" ng-click="click(item._id)">

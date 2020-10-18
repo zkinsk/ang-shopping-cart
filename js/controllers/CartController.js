@@ -52,7 +52,7 @@ app.controller('CartController', [
     };
 
     $scope.removeItem = function (id) {
-      $scope.cartItems = $scope.cartItems.filter(item=> item._id !== id)
+      $scope.cartItems = $scope.cartItems.filter((item) => item._id !== id);
     };
   },
 ]);
