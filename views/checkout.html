@@ -30,17 +30,17 @@
                   <label for="expityMonth">
                     EXPIRY DATE</label>
                   <div class="col-xs-6 col-lg-6 pl-ziro">
-                    <input type="number" class="form-control" id="expityMonth" placeholder="MM" required ng-model="checkoutInfo.expiryMonth" />
+                    <input type="text"  class="form-control" id="expityMonth" placeholder="MM" required ng-model="checkoutInfo.expiryMonth" />
                   </div>
                   <div class="col-xs-6 col-lg-6 pl-ziro">
-                    <input type="number" class="form-control" id="expityYear" placeholder="YY" required ng-model="checkoutInfo.expiryYear"/></div>
+                    <input type="text" class="form-control" id="expityYear" placeholder="YY" required ng-model="checkoutInfo.expiryYear"/></div>
                 </div>
               </div>
               <div class="col-xs-5 col-md-5 pull-right">
                 <div class="form-group">
                   <label for="cvCode">
                     CV CODE</label>
-                  <input type="password" class="form-control" id="cvCode" placeholder="CV" required ng-model="checkoutInfo.cvCode" />
+                  <input type="password" min=3 max=4 class="form-control" id="cvCode" placeholder="CV" required ng-model="checkoutInfo.cvCode" />
                 </div>
               </div>
             </div>

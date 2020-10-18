@@ -51,35 +51,40 @@ app.controller('CartController', [
       return (total + $scope.salesTax).toFixed(2);
     };
 
-    $scope.getSalesTax = function(){
+    $scope.getSalesTax = function () {
       return {
         amount: $scope.salesTax.toFixed(2),
-        rate: $scope.salesTaxRate*100
-      }
-    }
+        rate: $scope.salesTaxRate * 100,
+      };
+    };
 
     $scope.removeItem = function (id) {
       $scope.cartItems = $scope.cartItems.filter((item) => item._id !== id);
     };
 
-    $scope.itemsInCart = function(){
-      return $scope.cartItems.length > 0 ? false: true;
+    $scope.itemsInCart = function () {
+      return $scope.cartItems.length > 0 ? false : true;
     };
 
-    $scope.validateCheckout = function(){
-      const {cardNumber, expiryMonth, expiryYear, cvCode} = $scope.checkoutInfo
-      if (cardNumber !=="" && expiryMonth!=="" && expiryYear!=="" && cvCode!==""){
-        return false
+    $scope.validateCheckout = function () {
+      const { cardNumber, expiryMonth, expiryYear, cvCode } = $scope.checkoutInfo;
+      if (
+        checkLength(cardNumber, 12, 19) &&
+        checkLength(expiryMonth, 2, 2) &&
+        checkLength(expiryYear, 4, 4) &&
+        checkLength(cvCode, 3, 4)
+      ) {
+        return false;
       }
-      return true
+      return true;
     };
 
     $scope.checkoutInfo = {
-      cardNumber: "",
-      expiryMonth: "",
-      expiryYear: "",
-      cvCode: "",
-    }
+      cardNumber: '',
+      expiryMonth: '',
+      expiryYear: '',
+      cvCode: '',
+    };
   },
 ]);
 
@@ -88,4 +93,9 @@ function calcTotal(itemsArr) {
     typeof qty === 'number' || (qty = 0);
     return acc + +price * qty;
   }, 0);
+}
+
+function checkLength(item = "", min, max) {
+  console.log('Checking');
+  return item.length >= min && item.length <= max;
 }
