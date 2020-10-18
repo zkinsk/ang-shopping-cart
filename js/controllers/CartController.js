@@ -39,6 +39,7 @@ app.controller('CartController', [
         currency: '$',
       },
     ];
+
     $scope.salesTaxRate = 0.05;
     $scope.salesTax = 0;
     $scope.shippingCosts = 10.0;
@@ -60,8 +61,24 @@ app.controller('CartController', [
     $scope.removeItem = function (id) {
       $scope.cartItems = $scope.cartItems.filter((item) => item._id !== id);
     };
+
     $scope.itemsInCart = function(){
       return $scope.cartItems.length > 0 ? false: true;
+    };
+
+    $scope.validateCheckout = function(){
+      const {cardNumber, expiryMonth, expiryYear, cvCode} = $scope.checkoutInfo
+      if (cardNumber !=="" && expiryMonth!=="" && expiryYear!=="" && cvCode!==""){
+        return false
+      }
+      return true
+    };
+
+    $scope.checkoutInfo = {
+      cardNumber: "",
+      expiryMonth: "",
+      expiryYear: "",
+      cvCode: "",
     }
   },
 ]);
