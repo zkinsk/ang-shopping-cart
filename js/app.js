@@ -8,5 +8,11 @@ app.config(function ($routeProvider) {
     .when('/checkout', {
       templateUrl: 'views/checkout.html',
     })
+    // .when('/confirmation', {
+    //   templateUrl: 'views/confirmation.html',
+    // })
+    .when('/confirmation',{
+      templateUrl: 'views/confirmation.html'
+    })
     .otherwise({ redirectTo: '/' });
 });
